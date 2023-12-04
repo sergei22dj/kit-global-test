@@ -1,10 +1,10 @@
 type RunMode = 'DEV' | 'PROD';
 
-const RUN_MODE: RunMode = 'DEV';
+const RUN_MODE: RunMode = 'PROD';
 
 const BASE_URL = {
   DEV: 'http://localhost:3000/',
-  PROD: '',
+  PROD: 'https://kit-global-test-r7jk.vercel.app/',
 };
 
 const AUTH0_REDIRECT = BASE_URL[RUN_MODE]; 
