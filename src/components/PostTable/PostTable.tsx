@@ -1,5 +1,4 @@
 "use client";
-import { PostItem } from "@/types/types";
 import PostPreview from "./components/PostPreview/PostPreview";
 import { GridWrapper, Wrapper } from "./PostTableStyles";
 import { Button, CircularProgress } from "@mui/material";
@@ -9,8 +8,6 @@ import { useEffect, useState } from "react";
 import ModalForm from "../ModalForm/ModalForm";
 import { postsSelector } from "@/logic/Posts/postSelectors";
 import { showToast } from "@/helpers/alertService";
-import { ToastContainer, toast } from "react-toastify";
-import { ToastMessage } from "@/ui/ToastMessage/ToastMessage";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const PostTable = () => {
@@ -47,8 +44,8 @@ const PostTable = () => {
 
         {posts.length ? (
           <GridWrapper>
-            {posts?.map((el) => (
-              <PostPreview {...el} />
+            {posts?.map((el, index) => (
+              <PostPreview key={index} {...el} />
             ))}
           </GridWrapper>
         ) : (

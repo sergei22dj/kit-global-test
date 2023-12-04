@@ -27,11 +27,11 @@ const postsSlice = createSlice({
       state.loading = false
       state.error = 'getPost error'
     },
-    addPost: (state) => {
+    addPost: (state,action: PayloadAction<PostItem>) => {
       state.loading = true
+      state.posts = [action.payload]
     },
-    addPostSuccess: (state,action) => {
-      state.posts = action.payload
+    addPostSuccess: (state) => {
       state.loading = false
     },
     addPostFailure: (state) => {
