@@ -3,7 +3,6 @@ import PostDetails from "@/components/PostDetails/PostDetails";
 import { UseMetaData } from "@/helpers/hooks/useMetaData";
 import { getPosts } from "@/logic/Posts/postsSlice";
 import { PostItem } from "@/types/types";
-import Head from "next/head";
 import { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -20,7 +19,6 @@ const PostDetailsPage: FC<Props> = ({ params }) => {
   const filtredPost: PostItem | undefined = posts?.find(
     (el) => el.id === params.id
   );
-
   useEffect(() => {
     dispatch(getPosts());
   }, [params]);

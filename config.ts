@@ -1,6 +1,6 @@
 type RunMode = 'DEV' | 'PROD';
 
-const RUN_MODE: RunMode = 'PROD';
+const RUN_MODE: RunMode = 'DEV';
 
 const BASE_URL = {
   DEV: 'http://localhost:3000/',

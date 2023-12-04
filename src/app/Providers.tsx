@@ -16,6 +16,7 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
           domain={CONFIG.AUTH0.domain}
           clientId={CONFIG.AUTH0.clientId}
           authorizationParams={{ redirect_uri: CONFIG.AUTH0.redirect }}
+          cacheLocation="localstorage"
         >
           <Provider store={store}>
             <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
