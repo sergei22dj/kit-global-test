@@ -77,6 +77,7 @@ const Input: FC<Props> = ({
             value={value}
             onChange={handler}
             onKeyDown={handleEnterKey && handleEnterKey}
+            placeholder="For add tag press Enter\return(on mobile)"
           />
           <TagsWrapper>
             {tags?.map((el, index) => (
@@ -105,7 +106,7 @@ const Input: FC<Props> = ({
         >
           <Btn
             func={handleImageUpload}
-            label={"Choose image"}
+            label={selectedImage ? "Select a new image" : "Select an image"}
             width={"50%"}
             height={"40px"}
           />

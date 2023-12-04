@@ -22,8 +22,10 @@ const ModalInput: FC<Props> = ({ setModal, id }) => {
   const [commentText, setCommentText] = useState("");
   const dispatch = useDispatch();
   const { loading } = useSelector(postsSelector);
-  const { user, isAuthenticated } = useAuth0();
+  const [loadingUi, setLoadingUi] = useState(false);
+  const { user } = useAuth0();
   const createComment = () => {
+    setLoadingUi(false);
     const newComment: CommentItem = {
       author: user?.name as string,
       avatar: user?.picture as string,
@@ -37,6 +39,7 @@ const ModalInput: FC<Props> = ({ setModal, id }) => {
       setTimeout(() => {
         setModal(false);
       }, 1000);
+      setLoadingUi(true);
     } catch (error) {}
   };
   return (
@@ -56,7 +59,7 @@ const ModalInput: FC<Props> = ({ setModal, id }) => {
           width={"70%"}
           height={"40px"}
           func={createComment}
-          spinner={loading}
+          spinner={loading || loadingUi}
           buttonActive={commentText.length > 0}
         />
       </ContentContainer>
@@ -73,7 +76,7 @@ const ContentContainer = styled.div`
   border-radius: 12px;
   position: relative;
   border: 0.5px solid ${colors.gold};
-  width: 70%;
+  width: 50%;
   @media (max-width: 700px) {
     width: 100%;
   }

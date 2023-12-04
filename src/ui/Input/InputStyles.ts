@@ -14,7 +14,7 @@ all: unset;
 border: 1px solid ${colors.gold};
 border-radius: 6px;
 width: 100%;
-height: 30px;
+height: 40px;
 padding: 0 10px;
 box-sizing: border-box;
 `;

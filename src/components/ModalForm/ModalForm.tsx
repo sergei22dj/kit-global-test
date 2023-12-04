@@ -1,6 +1,6 @@
 "use client";
 import BlurWrapper from "@/ui/BlurWrapper/BlurWrapper";
-import React, { Dispatch, FC, SetStateAction } from "react";
+import React, { Dispatch, FC, SetStateAction, useState } from "react";
 import { CloseButton, Wrapper } from "./ModalFormStyles";
 import { Text } from "@/ui/Text/Text";
 import { colors } from "@/theme/colors";
@@ -29,6 +29,7 @@ const ModalForm: FC<Props> = ({ setVisible }) => {
   const { user } = useAuth0();
   const dispatch = useDispatch();
   const { loading } = useSelector(postsSelector);
+  const [disabledUi, setDisabledUi] = useState(false);
 
   const {
     PostItemSchema,
@@ -71,7 +72,10 @@ const ModalForm: FC<Props> = ({ setVisible }) => {
     };
     try {
       const validatedPost = PostItemSchema.parse(newPost);
+      setDisabledUi(true);
       validatedPost && dispatch(addPost(newPost));
+      setVisible(false);
+      setDisabledUi(false);
     } catch (error) {
       if (error instanceof z.ZodError) {
         const allErrors = error.errors.map((err): ZodValidationError => {
@@ -125,6 +129,7 @@ const ModalForm: FC<Props> = ({ setVisible }) => {
           height={"46px"}
           func={createPost}
           spinner={loading}
+          buttonActive={!disabledUi}
         />
       </Wrapper>
     </BlurWrapper>
