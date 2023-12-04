@@ -1,19 +1,84 @@
+@font-face {
+  font-family: "Gilroy-Thin";
+  src: local("Gilroy-Thin"), url(../../src/fonts/Gilroy-Thin.ttf) format("truetype");
+}
 
+@font-face {
+  font-family: "Gilroy-UltraLight";
+  src: local("Gilroy-UltraLight"),
+    url(../../src/fonts/Gilroy-UltraLight.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Gilroy-Light";
+  src: local("Gilroy-Light"), url(../../src/fonts/Gilroy-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Gilroy-Regular";
+  src: local("Gilroy-Regular"),
+    url(../../src/fonts/Gilroy-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Gilroy-Medium";
+  src: local("Gilroy-Medium"), url(../../src/fonts/Gilroy-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Gilroy-Semibold";
+  src: local("Gilroy-Semibold"),
+    url(../../src/fonts/Gilroy-Semibold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: local("Gilroy-Bold"), url(../../src/fonts/Gilroy-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Gilroy-Extrabold";
+  src: local("Gilroy-Extrabold"),
+    url(../../src/fonts/Gilroy-Extrabold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Gilroy-Black";
+  src: local("Gilroy-Black"), url(../../src/fonts/Gilroy-Black.ttf) format("truetype");
+}
 * {
+  &:focus {
+    outline: none;
+  }
+}
+
+div * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  margin: 0;
-}
-
-
 a {
-  color: inherit;
-  text-decoration: none;
+  all: unset;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  height: 100vh;
+  overflow: auto;
+  background-color: #101010;
+  color: white;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }

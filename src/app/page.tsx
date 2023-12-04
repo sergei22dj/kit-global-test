@@ -1,7 +1,9 @@
+import PostTable from "../components/PostTable/PostTable";
+
 export default function Home() {
   return (
-    <main>
-      <div></div>
-    </main>
+    <div>
+      <PostTable />
+    </div>
   );
 }
