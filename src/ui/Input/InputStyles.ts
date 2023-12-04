@@ -40,8 +40,8 @@ ${templates.centerContent};
 flex-direction: column;
 `;
 export const ChoosenPic = styled.img`
-height: 30%;
-width: 30%;
+height: 20%;
+width: 20%;
 aspect-ratio: 16/12;
 margin: 0 auto;
 `;
