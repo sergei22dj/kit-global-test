@@ -6,7 +6,6 @@ import { Avatar, Button, CircularProgress } from "@mui/material";
 const NavBar = () => {
   const { loginWithRedirect, logout, user, isAuthenticated, isLoading } =
     useAuth0();
-  console.log(user);
 
   return (
     <>

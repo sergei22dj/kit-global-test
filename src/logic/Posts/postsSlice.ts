@@ -39,7 +39,6 @@ const postsSlice = createSlice({
     },
     addComment: (state, action: PayloadAction<{postId: string; comment: CommentItem}>) => {
       const { postId, comment } = action.payload;
-      console.log(postId, comment)
     }
   },
 });

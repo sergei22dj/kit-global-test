@@ -78,7 +78,6 @@ const ModalForm: FC<Props> = ({ setVisible }) => {
           return {
             message: err.message,
             path: err.path,
-            // Добавьте другие свойства, если они присутствуют в вашей ошибке
           };
         });
 
